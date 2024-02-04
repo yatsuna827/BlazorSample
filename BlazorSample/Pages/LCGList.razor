@@ -1,0 +1,39 @@
+﻿@using PokemonPRNG.LCG32.GCLCG;
+
+@page "/lcg"
+
+<PageTitle>LCG List</PageTitle>
+
+<h1>LCG List</h1>
+
+<button class="btn btn-primary" @onclick="Increment">Click me</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Seed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (i, seed) in _seedList.Select((x,i) => (i, x)))
+        {
+            <tr>
+                <td>@i</td>
+                <td>@($"{seed:X8}")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+
+    private uint _seed = 0u;
+    private List<uint> _seedList = new List<uint>();
+
+    private void Increment()
+    {
+        for (int i = 0; i < 10; i++, _seed.Advance())
+            _seedList.Add(_seed);
+    }
+}
