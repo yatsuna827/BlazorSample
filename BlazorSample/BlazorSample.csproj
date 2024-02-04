@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GHPages>true</GHPages>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.14" PrivateAssets="all" />
     <PackageReference Include="PokemonPRNG.LCG32.Core" Version="1.0.0" />
     <PackageReference Include="PokemonPRNG.LCG32.GCLCG" Version="1.0.0" />
+    <PackageReference Include="PublishSPAforGitHubPages.Build" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
